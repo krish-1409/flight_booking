@@ -9,4 +9,4 @@ python latest version,
 selenium
 
 # Getting Started
-download web drivers for your browser into a folder and change the path in browse function(in executable path) of scrapy.py and ixigo.py.
+download web drivers for your browser into a folder and change the path in browse function(in executable path) of scrapy.py ,ixigo.py , patym.py.
