@@ -1,0 +1,16 @@
+{% extends "users/base.html" %}
+{% load crispy_forms_tags%}
+{% block content %}
+    <div style="border:2px solid red;padding:10px;">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset>
+                <legend>SEARCH FLIGHTS</legend>
+                {{ form | crispy }}
+            </fieldset>
+            <h1></h1>
+            <div><button class="btn btn-primary " type="submit">Search</button></div>
+        </form>
+    </div>
+{% endblock %}
+

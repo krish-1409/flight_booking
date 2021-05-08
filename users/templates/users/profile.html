@@ -1,0 +1,21 @@
+{% extends "users/base.html" %}
+
+{% block content %}
+    <div style="border:2px solid red">
+        <img  style="padding:10px" class="img-circle" src="{{ user.profile.image.url }}">
+        <table class="table table-hover">
+            <caption style="font-size:18px;padding-left:30px;border-bottom:3px solid black;">user profile</caption>
+
+            <tr>
+                <td style="width:40%;" class="info"> user-name</td>
+                <td style="width:60%;" class="warning"> {{user.username }}</td>
+            </tr>
+            <tr>
+                <td style="width:40%;" class="info"> user-email</td>
+                <td style="width:60%;" class="warning"> {{user.email }}</td>
+            </tr>
+        </table>
+    </div>
+    <!-- <h3>password - <small>{{user.password}}</small></h3> -->
+
+{% endblock %}

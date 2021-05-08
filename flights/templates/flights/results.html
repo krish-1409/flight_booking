@@ -1,0 +1,60 @@
+
+{% extends "users/base.html" %}
+
+
+{% block content %}
+    <h1>These are some flights available for you {{ user.username}} </h1>
+    {% for each in flights %}
+        <table  class="table table-hover ">
+            {% for j,k in each.items %}
+                {% if j == 'website-URL' %}
+                    <tr>
+                        <td style="width:40%;" class="info">url</td>
+                        <td style="width:60%;" class="warning"><a style="font-weight:bold" href="{{k}}">&nbsp&nbspwebsite-link</a></td>
+                    </tr>
+                {% else %}
+                    {% if j == 'website' and k == 'IXIGO' %}
+                        <tr>
+                            <td style="width:40%; vertical-align:middle;" class="info" >website name</td>
+                            <td style="width:60%;" class="warning" ><img style="width:100px" src="/static/ixigo (1).png" ></td>
+                        </tr>
+                    {% else %}
+                        {% if j == 'website' and k == 'MAKE-MY-TRIP' %}
+                            <tr>
+                                <td style="width:40%; vertical-align:middle;" class="info" >website name</td>
+                                <td style="width:60%;"class="warning"><img style="width:100px" src="/static/mmt.png"></td>
+                            </tr>
+
+                            {% else %}
+                            {% if j == 'website' and k == 'PAYTM' %}
+                                <tr>
+                                    <td style="width:40%; vertical-align:middle;" class="info" >website name</td>
+                                    <td style="width:60%;"class="warning"><img style="width:100px" src="/static/Paytm.png"></td>
+                                </tr>
+                        {% else %}
+                            {% if j == 'flight-score' %}
+                                <tr >
+                                    <td style="width:40%;" class="info" > {{ j }} </td>
+                                    <td style="width:60%;"class="warning" > {{ k }} </td>
+                                </tr>
+                            {% else %}
+                                {% if j == 'fduration' %}
+                                {% else %}
+                                    <tr >
+                                        <td style="width:40%;" class="info"> {{ j }} </td>
+                                        <td style="width:60%;" class="warning"> {{ k }} </td>
+                                    </tr>
+                                {% endif %}
+                            {% endif %}
+                            {% endif %}
+                        {% endif %}
+                    {% endif %}
+                {% endif %}
+
+            {% endfor %}
+            <div style="border:2px solid black"></div>
+        </table>
+    {% endfor %}
+
+
+{% endblock %}
